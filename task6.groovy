@@ -1,4 +1,4 @@
-job("Pull from GitHub ") {
+job("Pull from GitHub") {
   description("Pulls Codes and scripts From GitHub repository and copies them into a folder in base system.")
 
   scm {
@@ -11,7 +11,6 @@ job("Pull from GitHub ") {
 
   steps {
     shell('''
-    sudo mkdir /home/jenkins_groovy
     sudo cp -rvf * /home/jenkins_groovy
     ''')
   }
@@ -55,7 +54,7 @@ job("Mailing") {
 
 buildPipelineView("Deploy_groovy") {
   title("Deploy webpage using Jenkins(auomated by groovy) and K8s")
-  selectedJob("1 Git Pull")
+  selectedJob("Pull from GitHub")
   displayedBuilds(1)
   refreshFrequency(4)
   alwaysAllowManualTrigger()
