@@ -6,7 +6,7 @@ job("Pull from GitHub ") {
   }
 
   triggers {
-    scm(* * * * *)
+    scm("* * * * *")
   }
 
   steps {
